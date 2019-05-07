@@ -32,7 +32,12 @@
             var width = Math.max(body.scrollWidth, body.offsetWidth,
                 html.clientWidth, html.scrollWidth, html.offsetWidth);
 
+           /* var elem = document.createElement('div');
+            elem.style.cssText = 'position:absolute;width:100%;height:100%;opacity:0.3;z-index:100;background:#000';
+            document.body.appendChild(elem);*/
+
             var my_canvas = document.createElement('canvas');
+            my_canvas.style.cssText='position: fixed;'
             my_canvas.height = height;
             my_canvas.width = width;
             document.body.appendChild(my_canvas);
@@ -101,13 +106,13 @@
                     }
                     //all_obj.shift();
                     all_obj = visible_obj.concat();
-                    
+
                     if (all_obj.length > 1000) {
                         all_obj.shift();
                     }
 
                 }
-                
+
                 //console.log('all obj '+all_obj.length+' & vis obj '+visible_obj.length);
             }
             animationLoop();
